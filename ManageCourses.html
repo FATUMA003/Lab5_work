@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage course</title>
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap-grid.min.css">
+</head>
+<body>
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="font/bootstrap-icons.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 220px;
+      height: 100vh;
+      background-color: #0b2447;
+      color: white;
+    }
+
+    .sidebar .nav-link {
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .sidebar .nav-link.active, .sidebar .nav-link:hover {
+      background-color: #073168;
+      color: #fff;
+    }
+
+    .topbar {
+      margin-left: 220px;
+      height: 60px;
+      background-color: #ffffff;
+      border-bottom: 2px solid orange;
+      padding: 0 20px;
+    }
+
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    .footer {
+      margin-left: 220px;
+      padding: 10px 20px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ccc;
+      position: fixed;
+      bottom: 0;
+      width: calc(100% - 220px);
+    }
+
+    h6 {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="text-left mb-4" style="background-color: rgb(61,193,233);padding: 10px;padding-top: 20px;">
+      <img src="image/suza_logo.png" width="80" alt="suza_logo">
+    </div>
+
+    <nav class="nav flex-column">
+      <a class="nav-link active bi bi-bar-chart" href="dashboard.html">Dashboard</a>
+      <a class="nav-link  bi bi-person-fill" href="ManageUser.html">Manage Users</a>
+      <a class="nav-link bi bi-people" href="ManageInstructors.html">Manage Instructors</a>
+      <a class="nav-link bi bi-person-fill" href="ManageStudents.html">Manage Students</a>
+      <a class="nav-link bi bi-book" href="ManageCourses.html">Manage Courses</a>
+      <a class="nav-link bi bi-clipboard" href="ManageResults.html">Manage Results</a>
+      <a class="nav-link bi bi-calendar2-check" href="ManageAllocation.html">Manage Allocations</a>
+    </nav>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar d-flex justify-content-between align-items-center">
+    <button class="btn btn-primary btn-sm">☰</button>
+    <div class="dropdown ms-auto">
+        <button class="btn btn-light dropdown-toggle" type="button" id="adminDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Admin Name
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
+          <li><a class="dropdown-item" href="#">Change Password</a></li>
+          <li><a class="dropdown-item" href="#">Change Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+        </ul>
+      </div>
+      
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    
+  </div>
+    <div>
+      <table class="table table-bordered table-striped text-center">
+        <thead class="table-light">
+          <tr>
+            <th>Course Code</th>
+            <th>Course title</th>
+            <th>Semister</th>
+            <th>Year</th>
+            <th>Credits</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CS101</td>
+            <td>Introduction to programming</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+            <td><button class="btn btn-sm btn-warning">Edit</button></td>
+            <td><button class="btn btn-sm btn-danger">Delete</button></td>
+            
+          </tr>
+        </tbody>
+        <tbody>
+            <tr>
+              <td>IT202</td>
+              <td>Database Management</td>
+              <td>2</td>
+              <td>2</td>
+              <td>4</td>
+              <td><button class="btn btn-sm btn-warning">Edit</button></td>
+              <td><button class="btn btn-sm btn-danger">Delete</button></td>
+              
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>SE305</td>
+              <td>Software Engineering</td>
+              <td>1</td>
+              <td>3</td>
+              <td>4</td>
+              <td><button class="btn btn-sm btn-warning">Edit</button></td>
+              <td><button class="btn btn-sm btn-danger">Delete</button></td>
+              
+            </tr>
+          </tbody>
+      </table>
+
+      <nav>
+        <ul class="pagination justify-content-end">
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Previous</a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+        </nav>
+    
+    </div>
+    <!-- Footer -->
+  <div class="footer">
+    © 2025 The State University of Zanzibar | Version 1.0.2
+  </div>
+  <script src="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="font/bootstrap-icons.min.js"></script>
+
+
+    
+</body>
+</html>
