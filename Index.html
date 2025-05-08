@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="bootstrap-5.3.5-dist\bootstrap-5.3.5-dist\css\bootstrap.min.css" />
+  
+  <style>
+    body {
+      background: linear-gradient(to right, #076ece 0%, #011424 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      max-width: 1000px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      border-radius: 10px;
+      box-shadow: black;
+      overflow: hidden;
+    }
+
+    .left-panel {
+      background-color: black;
+      color: white;
+      padding: 30px;
+      flex: 1;
+    }
+
+    .left-panel label {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .left-panel hr {
+      border-top: 3px solid white;
+      width: 60px;
+      margin: 20px 0;
+    }
+
+    .left-panel a {
+      color: #0dcaf0;
+      text-decoration: none;
+    }
+
+    .right-panel {
+      background-color: white;
+      padding: 30px;
+      flex: 1;
+    }
+
+    .right-panel img {
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .forgot {
+      float: right;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+ 
+  
+
+  <div class="card">
+    <!-- Left Side -->
+    <div class="left-panel">
+      <label>Student Management System</label>
+      <hr />
+      <p>
+        <input type="checkbox" /> For Academic Staff?
+        <a href="#">Login</a> here using your employee number.
+      </p>
+      <p>
+        <input type="checkbox" /> For Student?
+        <a href="#">Login</a> here using registration number.
+      </p>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-panel">
+      <form action="dashboard.html" method="get">
+        >
+        <img src="image/suza_logo.png" alt="suza_logo" width="100" />
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Username" />
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="Password" />
+        </div>
+        <div class="mb-3 d-flex justify-content-between">
+          <div>
+            <input type="checkbox" id="remember" />
+            <label for="remember">Remember Me</label>
+          </div>
+          <a href="#" class="forgot">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">SIGN IN</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="D:\Desktop\Mimi\bootstrap-5.3.5-dist\bootstrap-5.3.5-dist\js\bootstrap.min.js"></script>
+</body>
+</html>
