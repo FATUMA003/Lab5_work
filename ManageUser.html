@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage user</title>
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap-grid.min.css">
+</head>
+<body>
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="font/bootstrap-icons.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 220px;
+      height: 100vh;
+      background-color: #0b2447;
+      color: white;
+    }
+
+    .sidebar .nav-link {
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .sidebar .nav-link.active, .sidebar .nav-link:hover {
+      background-color: #073168;
+      color: #fff;
+    }
+
+    .topbar {
+      margin-left: 220px;
+      height: 60px;
+      background-color: #ffffff;
+      border-bottom: 2px solid orange;
+      padding: 0 20px;
+    }
+
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    .footer {
+      margin-left: 220px;
+      padding: 10px 20px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ccc;
+      position: fixed;
+      bottom: 0;
+      width: calc(100% - 220px);
+    }
+
+    h6 {
+      margin-top: 20px;
+    }
+  </style>
+
+ 
+<body>
+
+
+   <!-- Modal for Add User -->
+<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="addUserModalLabel">Export to Excel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username">
+            </div>
+            <div class="col">
+              <label for="lastname" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastname">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="col">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" id="phone">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="firstname" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstname">
+            </div>
+            <div class="col">
+              <label for="role" class="form-label">User Role</label>
+              <select class="form-select" id="role">
+                <option>Administrator</option>
+                <option>Instructor</option>
+                <option>Student</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+            <div class="col">
+              <label for="status" class="form-label">User Status</label>
+              <select class="form-select" id="status">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save User</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</head>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="text-left mb-4" style="background-color: rgb(61,193,233);padding: 10px;padding-top: 20px;">
+      <img src="image/suza_logo.png" width="80" alt="suza_logo">
+    </div>
+
+    <nav class="nav flex-column">
+      <a class="nav-link active bi bi-bar-chart" href="dashboard.html">Dashboard</a>
+      <a class="nav-link  bi bi-person-fill" href="ManageUser.html">Manage Users</a>
+      <a class="nav-link bi bi-people" href="ManageInstructors.html">Manage Instructors</a>
+      <a class="nav-link bi bi-person-fill" href="ManageStudents.html">Manage Students</a>
+      <a class="nav-link bi bi-book" href="ManageCourses.html">Manage Courses</a>
+      <a class="nav-link bi bi-clipboard" href="ManageResults.html">Manage Results</a>
+      <a class="nav-link bi bi-calendar2-check" href="ManageAllocation.html">Manage Allocations</a>
+    </nav>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar d-flex justify-content-between align-items-center">
+    <button class="btn btn-primary btn-sm">☰</button>
+    <div class="dropdown ms-auto">
+        <button class="btn btn-light dropdown-toggle" type="button" id="adminDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Admin Name
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
+          <li><a class="dropdown-item" href="#">Change Password</a></li>
+          <li><a class="dropdown-item" href="#">Change Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+        </ul>
+      </div>
+      
+  </div>
+
+  
+  <!-- Content -->
+  <div class="d-flex justify-content-between align-items-center mb-3" style="padding: 10px 20px; border-radius: 5px; background-color: #f8f9fa;">
+
+    <div class="content" style="margin-left: 220px;">
+      <h6 class="mb-0">User Settings</h6>
+
+      <button class="btn btn-success btn-sm me-3" data-bs-toggle="modal" data-bs-target="#addUserModal">+ Add User</button><br></br>
+      <button class="btn btn-secondary btn-sm me-3" data-bs-toggle="modal" data-bs-target="#addUserModal">Export to Excel</button>
+    </div>
+    <form class="d-flex" role="search">
+      Search: <input class="form-control form-control-sm" type="search" aria-label="Search">
+      
+    </form>
+  </div>
+  
+
+  <table class="table  table-striped text-center">
+
+      <table class="table table-striped text-center">
+        <thead class="table-light">
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>User Role</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Block/Activate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>adminuser</td>
+            <td>admin@example.com</td>
+            <td>John</td>
+            <td>Doe</td>
+            <td>Admin</td>
+            <td><button class="btn btn-sm btn-warning">Edit</button></td>
+            <td><button class="btn btn-sm btn-danger">Delete</button></td>
+            <td><button class="btn btn-sm btn-secondary">Block</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav>
+        <ul class="pagination justify-content-end">
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Previous</a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+        </nav>
+    
+    </div>
+    <!-- Footer -->
+  <div class="footer">
+    © 2025 The State University of Zanzibar | Version 1.0.2
+  </div>
+  <script src="bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="font/bootstrap-icons.min.js"></script>
+
+
+    
+</body>
+</html>
